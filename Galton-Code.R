@@ -26,12 +26,12 @@ print(y)
 x = data[,1]
 print("--------------")
 print(x)
-# lm.fit = lm(y~x) #Linear regression
+lm.fit = lm(y~x) #Linear regression
 
-# summary(lm.fit)
+summary(lm.fit)
 
-# resid = lm.fit$residuals
-# predict = lm.fit$fitted.values
+resid = lm.fit$residuals
+predict = lm.fit$fitted.values
 
 # ### residual vs. x plot (to check for non-linearity) ###
 
