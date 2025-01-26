@@ -25,7 +25,7 @@ speed <- data[,2]
 plot(x = speed,  y= output, xlab = "speed",  ylab= "output", main = "(x,y)")
 
 speed2 <- 1 / (data[,2])
-plot(x = speed2,  y= output, xlab = "speed",  ylab= "output", main = "(x,y)")
+plot(x = speed2,  y= output, xlab = "speed",  ylab= "output", main = "(1/x,y)")
 
 
 
