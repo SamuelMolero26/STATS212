@@ -13,6 +13,20 @@ plot(x = t, y = y_t, xlab = "t", ylab = "y", main = "(t,y) Graph")
 y_log <- log(y_t)
 plot(x = t, y = y_log, xlab = "t", ylab = "log(y)", main = "(t,log(y)) Graph")
 
+lm_fit <- lm(y_log~t)
+summary(lm_fit)
+#equation: log(y) = 5.9732 - 0.2184t
+# solving for y = e^(5.9732 - 0.2184t)
+
+data <- read.table("WindSpeed.txt", header = TRUE)
+output <- data[,1]
+speed <- data[,2]
+
+plot(x = speed,  y= output, xlab = "speed",  ylab= "output", main = "(x,y)")
+
+speed2 <- 1 / (data[,2])
+plot(x = speed2,  y= output, xlab = "speed",  ylab= "output", main = "(x,y)")
+
 
 
 
