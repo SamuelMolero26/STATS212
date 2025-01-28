@@ -32,7 +32,7 @@ summary(lm.fit)
 
 resid = lm.fit$residuals
 predict = lm.fit$fitted.values
-
+summary(lm.fit)
 # ### residual vs. x plot (to check for non-linearity) ###
 
 # plot(x, resid, xlab = "Father's Height", ylab = "Residuals", main = "Residual Plot for Non-linearity Checking")
