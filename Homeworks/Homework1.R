@@ -42,15 +42,20 @@ plot(predict, resid,xlab="yhat", ylab="...", main ="Residual Plot for Error Vari
 hist(resid,xlab ="Residuals", main = "Histogram of the Residuals", breaks = "FD")
 plot(density(resid), xlab = "Residuals", ylab = "Density", main = "Density Estimate of Residuals") #density estimator
 qqnorm(resid) #normal quantile plot
+qqline(resid, col ="RED", lwd = 2)
+
+summary(l)$r.squared
+
 
 #for 99% CI
 confint(lim_fit, level=0.99)
 
+lim.fit <- lm(output~speed2)
 #for 95% CI given an average
 predict(lm(output~speed2), data.frame(speed=3.2), interval ="confidence", level=0.95)
 #ask about this one
 
-predict(lm(output~speed2), data.frame(speed=9.05), interval ="prediction", level=0.95)
+predict(lim_fit, data.frame(speed=9.05), interval ="prediction", level=0.95)
 
 #equation: y = 2.9789 -6.935/x
 
