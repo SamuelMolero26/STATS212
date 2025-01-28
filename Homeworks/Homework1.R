@@ -39,7 +39,7 @@ predict<-lim_fit$fitted.values
 plot(speed2, resid, xlab="speed", ylab="Residuals", main = "Residual Plot for Non-linearity Checking")
 plot(predict, resid,xlab="yhat", ylab="...", main ="Residual Plot for Error Variance Checking")
 
-hist(resid,xlab ="Residuals", main = "Histogram of the Residuals")
+hist(resid,xlab ="Residuals", main = "Histogram of the Residuals", breaks = "FD")
 plot(density(resid), xlab = "Residuals", ylab = "Density", main = "Density Estimate of Residuals") #density estimator
 qqnorm(resid) #normal quantile plot
 
@@ -47,7 +47,7 @@ qqnorm(resid) #normal quantile plot
 confint(lim_fit, level=0.99)
 
 #for 95% CI given an average
-predict(lim_fit, newdata = data.frame(speed=3.2), interval ="confidence", level=0.95)
+predict(lm(output~speed2), data.frame(speed=3.2), interval ="confidence", level=0.95)
 #ask about this one
 
 predict(lm(output~speed2), data.frame(speed=9.05), interval ="prediction", level=0.95)
