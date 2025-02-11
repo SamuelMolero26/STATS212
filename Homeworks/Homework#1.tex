@@ -81,11 +81,26 @@
             
             \part The $R^{2}$ obtained equals 0.9800, meaning that 98\%\ of the variation in wind speed's output is explained by linear regression. \\
 
-            \part $\beta_1 = [-7.514076 -6.355019]$, there is 99\%\ confidence that the true slope lies between the given values. 
+            \part 
+            \begin{verbatim}
+                # confint(lim_fit, level=0.99)
+            \end{verbatim}
+            $\beta_1 = [-7.514076 -6.355019]$, there is 99\%\ confidence that the true slope lies between the given values. 
+            
 
-            \part Given that thewind speedd is 3.2, there is 95\%\ confidence that the true value lies within the interval $[0.7512664,1.053837]$
+            \part 
+            \begin{verbatim}
+            predict(lm(output~speed2), data.frame(speed=3.2),
+            interval ="confidence", level=0.95)
+            \end{verbatim}
+            Given that thewind speedd is 3.2, there is 95\%\ confidence that the true value lies within the interval $[0.74911,0.87451]$
 
-            \part Given that the particular speed at a specific windmill is 9.05, the 95\%\ prediction interval for the output lies within the interval $[1.802188, 2.824357]$
+            \part 
+            \begin{verbatim}
+                predict(lim_fit, data.frame(speed=9.05), 
+                interval ="prediction", level=0.95)
+            \end{verbatim}
+            Given that the particular speed at a specific windmill is 9.05, the 95\%\ prediction interval for the output lies within the interval $[2.0105,2.4147]$
             
         
         \end{parts}
