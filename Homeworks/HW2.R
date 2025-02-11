@@ -42,13 +42,14 @@ summary(tree_fit) #reject the null
 
 resid = tree_fit$residuals
 fitted = tree_fit$fitted.values
-plot(fitted, resid, xlab ="Fitted", ylab = "Residuals")
+plot(fitted, resid, xlab ="Fitted", ylab = "Residuals", main = "Residuals vs Perdicted values")
+
 
 
 #Part d
 newtree = data.frame(x=110)
-temp. <- predict(tree_fit, newdata = newtree, interval = "predict", level =0.95)
-plot(temp)
+predict(tree_fit, newdata = newtree, interval = "predict", level =0.95)
+ #ther assumpiton is validates, as the fitted increases residiauals increase.
 
 
 #Problem # 1

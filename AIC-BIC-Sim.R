@@ -1,5 +1,5 @@
- #Ensures reproducibility of results. #value inside is the starting value in the sequence
-
+set.seed(100) #Ensures reproducibility of results. #value inside is the starting value in the sequence
+rnorm(1)
 #n = 200 # Larger sample size #
 
 n = 30 # Original sample size used in the results shown in the lecture slides #
