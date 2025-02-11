@@ -1,0 +1,68 @@
+\documentclass[12pt,letterpaper, onecolumn]{exam}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[lmargin=71pt, tmargin=1.2in]{geometry}  %For centering solution box
+\lhead{Leaft Header\\}
+\rhead{Right Header\\}
+% \chead{\hline} % Un-comment to draw line below header
+\thispagestyle{empty}   %For removing header/footer from page 1
+
+\begin{document}
+
+\begingroup  
+    \centering
+    \LARGE STATS 212\\
+    \LARGE Homework 2\\[0.5em]
+    \large \today\\[0.5em]
+    \large Samuel Molero\par
+    \large samueljosemolero@tamu.edu\par
+    \large Section: 501\par
+\endgroup
+\rule{\textwidth}{0.4pt}
+\pointsdroppedatright   %Self-explanatory
+\printanswers
+\renewcommand{\solutiontitle}{\noindent\textbf{Ans:}\enspace}   %Replace "Ans:" with starting keyword in solution box
+
+\begin{questions}
+
+    \question Q1
+    \begin{solution}
+        
+    \end{solution}
+
+    \question Q2
+    \begin{solution}
+        \begin{parts}
+            \part 
+            \begin{verbatim}
+             # AIC [239.5899 230.0744 231.8443 233.4604 
+              235.2434 237.2078 234.6909 234.6980]
+             # BIC [243.4774 235.2577 238.3235 241.2355 
+             244.3142 247.5745 246.3534 247.6563]
+            \end{verbatim}
+            From the data collected after having created a good polynomial regression model from degrees 1 to 8, 
+            the best degree for both AIC and BIC is 2.
+            \part 
+            \begin{verbatim}
+            # tree_fit <- lm(y~poly(x, degree = 2, raw = TRUE))
+            # summary(tree_fit)
+            \end{verbatim}
+            Running the following code will result in a P-value $0.00154$, and since the P-value is less than $0.05$ the null is rejected and hence the coefficient of $x^{2}$ is significantly different from zero.
+            \part 
+            \includegraphics[width=0.4\textwidth]]{}
+
+            
+            \part
+        \end{parts}
+    \end{solution}
+
+    \pagebreak %Not necessary
+    
+    \question[Type anything here] Q3?\droppoints
+    
+    \begin{solution}
+            A3.
+    \end{solution}
+    
+\end{questions}
+\end{document}
