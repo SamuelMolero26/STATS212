@@ -1,6 +1,7 @@
 \documentclass[12pt,letterpaper, onecolumn]{exam}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{graphicx}
 \usepackage[lmargin=71pt, tmargin=1.2in]{geometry}  %For centering solution box
 \lhead{Leaft Header\\}
 \rhead{Right Header\\}
@@ -28,6 +29,7 @@
     \question Q1
     \begin{solution}
         
+        
     \end{solution}
 
     \question Q2
@@ -47,22 +49,18 @@
             # tree_fit <- lm(y~poly(x, degree = 2, raw = TRUE))
             # summary(tree_fit)
             \end{verbatim}
-            Running the following code will result in a P-value $0.00154$, and since the P-value is less than $0.05$ the null is rejected and hence the coefficient of $x^{2}$ is significantly different from zero.
+            Running the following code will result in a P-value of $0.00154$, and since the P-value is less than $0.05$ the null is rejected and hence the coefficient of $x^{2}$ is significantly different from zero.
             \part 
-            \includegraphics[width=0.4\textwidth]]{}
-
-            
-            \part
+                \includegraphics[width=0.8\textwidth]{Homeworks/RedVPred.png}\\
+            What's remarkable about this graph, is that as the fitted values increase, the residuals tend to show greater variability, demonstrating that the spread of error is not constant and supporting the assumption that the coefficient of  $x^{2}$ is significantly different from zero.
+               
+            \part There is a 95\%\ confidence that the age of a tree with a 110 diameter is within the range $[18.17506, 84.82335]$.
         \end{parts}
     \end{solution}
 
     \pagebreak %Not necessary
     
-    \question[Type anything here] Q3?\droppoints
-    
-    \begin{solution}
-            A3.
-    \end{solution}
-    
+   
+  
 \end{questions}
 \end{document}

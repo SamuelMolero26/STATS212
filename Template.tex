@@ -1,6 +1,7 @@
 \documentclass[12pt,letterpaper, onecolumn]{exam}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{graphicx}
 \usepackage[lmargin=71pt, tmargin=1.2in]{geometry}  %For centering solution box
 \lhead{Leaft Header\\}
 \rhead{Right Header\\}
@@ -26,13 +27,32 @@
 \begin{questions}
 
     \question Q1
+    \begin{solution}
+        
+    \end{solution}
 
     \question Q2
     \begin{solution}
         \begin{parts}
             \part 
+            \begin{verbatim}
+             # AIC [239.5899 230.0744 231.8443 233.4604 
+              235.2434 237.2078 234.6909 234.6980]
+             # BIC [243.4774 235.2577 238.3235 241.2355 
+             244.3142 247.5745 246.3534 247.6563]
+            \end{verbatim}
+            From the data collected after having created a good polynomial regression model from degrees 1 to 8, 
+            the best degree for both AIC and BIC is 2.
             \part 
-            \part
+            \begin{verbatim}
+            # tree_fit <- lm(y~poly(x, degree = 2, raw = TRUE))
+            # summary(tree_fit)
+            \end{verbatim}
+            Running the following code will result in a P-value $0.00154$, and since the P-value is less than $0.05$ the null is rejected and hence the coefficient of $x^{2}$ is significantly different from zero.
+            \part 
+            \includegraphics[width=0.4\textwidth]]{}
+
+            
             \part
         \end{parts}
     \end{solution}
