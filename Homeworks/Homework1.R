@@ -27,10 +27,10 @@ speed <- data[,2]
 
 plot(x = speed,  y= output, xlab = "speed",  ylab= "output", main = "(x,y)")
 
-speed2 <- 1 / (speed)
+speed2 <- (1 / (speed))
 plot(x = speed2,  y= output, xlab = "speed",  ylab= "output", main = "(1/x,y)")
 
-lim_fit <-lm(output~speed2)
+lim_fit <-lm(output~speed)
 summary(lim_fit)
 
 resid <-lim_fit$residuals
@@ -52,10 +52,10 @@ confint(lim_fit, level=0.99)
 
 lim.fit <- lm(output~speed2)
 #for 95% CI given an average
-predict(lm(output~speed2), data.frame(speed=3.2), interval ="confidence", level=0.95)
+predict(lim.fit, newdata = data.frame(speed2=3.2), interval ="confidence", level=0.95)
 #ask about this one
 
-predict(lim_fit, data.frame(speed=9.05), interval ="prediction", level=0.95)
+predict(lim.fit, data.frame(speed=9.05), interval ="prediction", level=0.95)
 
 #equation: y = 2.9789 -6.935/x
 
