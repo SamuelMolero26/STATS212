@@ -55,7 +55,7 @@
         \part \includegraphics[width=0.96\textwidth]{Homeworks/Plots1232.png}\\
             (i) The is no clear pattern, but the spread of residuals increases in proportion to fitted values, indicating no constant variance. Additionally, non-linearity exits which demonstrate that a linear model may not be the best fit.\\
             (ii) The distribution is highly skewed, indicating for no normality assumption. \\
-            (iii) The points mostly follow a straight line in the middle, but deviate at extremes demonstrating a non-normality.\\
+            (iii) The points mostly follow a straight line in the middle, but deviate at extremes demonstrating a non-normality at outliers.\\
         \part 
         \begin{lstlisting}
     source("AIC-Leaps.R")
@@ -76,19 +76,39 @@
     By the code above,the best predictors are "home.runs", "rbi","walks",\\
     "strike.outs",\\
    "stolen.bases","free.agent.eligible","free.agent","arbitration.eligible",\\
-    and "arbitration" \\   
-        
+    and "arbitration"  
+    
     The rationale for selecting these predictors was based on the combination of player performance metrics and contractual factors that ultimately influence the salary. The leaps() function alongside Mallows CP helps identify the best subset, by comparing the models' goodness of fit and complexity. A lower CP will indicate that the model is both accurate and not complex, which is why the models with the lowest CP were selected as the best subset, to ensure that the salary variations are explained without unnecessary predictors, and thus show  the strongest statistical relation with salary.\\
 
-        \part
-        \begin{verbatim}
-            
-        \end{verbatim}
-        \end{parts}
-        
-            
+\part \includegraphics[width=0.7\textwidth]{Homeworks/HW3ipng.png}\\
+Player with standardized residual greater than the 3 are:\\
+\includegraphics[width=0.96\textwidth]{Homeworks/HW3i2.png}
+Demonstrating who the difference in salaries does not correlate with the battling average, hits, and triples.
+\part \includegraphics[width=0.7\textwidth]{Homeworks/HW3J.png}\\
+The plot exhibits a curved pattern, suggesting no linearity in the data.\\
+\part \includegraphics[width=0.7\textwidth]{Homeworks/HW3K.png}\\
+Mostly linear but demonstrate non-normality by outliers.
+
+\part \includegraphics[width=0.7\textwidth]{Homeworks/CookD.png}\\
+Most points are near zero, demonstrating little influence, with a few being above the zero range.\\
+Running the following code to determine the outliers
+\begin{verbatim}
+    influential_points <- which(cd > (4 / length(cd)))
+    print(influential_points)
+    df[influential_points, ]
+
+    output (a few):
+    stolen.bases      errors 
+    22            76      6                  
+    25             2     15                   
+    26            10      7                  
+    27            37      3                   
+\end{verbatim}
+    Which demonstrates that predictors such as stolen.bases and errors have a high impact on the fitted model
+    \end{parts}     
     \end{solution}
-    
+
+
     \question Q2?
     \begin{solution}
         \begin{parts}
@@ -127,14 +147,14 @@ Residuals 16 1487.1   92.95
         boxplot(resid(fit))
         plot(fit, which=2)
         \end{verbatim}
-       The Code snippets creates the following graphs:\\
+       The Code snippets creates the following graphs:
     \center
     \includegraphics[width=0.7\textwidth]{Homeworks/Graph1HW3.png}\\
     \includegraphics[width=0.7\textwidth]{Homeworks/Graph2HW3.png}\\
     plots also suggest that the normality assumption is approximately satisfied, in agreement with the Shapiro-Wilk test p-value.
     \end{solution}
 
-    \pagebreak %Not necessary
+
     
     
 \end{questions}
